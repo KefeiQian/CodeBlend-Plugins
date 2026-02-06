@@ -1,0 +1,8 @@
+{
+    "name": "codeblend",
+    "description": "Plugin for CodeBlend Support",
+    "version": "1.0.2",
+    "author": {
+        "name": "Kefei Qian"
+    }
+}

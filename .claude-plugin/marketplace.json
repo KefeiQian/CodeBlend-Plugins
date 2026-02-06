@@ -8,17 +8,15 @@
   },
   "plugins": [
     {
-      "name": "codeblend-commit",
-      "source": "./codeblend-commit",
-      "description": "Analyzes staged git changes and creates intelligent commits by categorizing them into logical groups",
-      "version": "1.0.1",
+      "name": "codeblend",
+      "source": "./codeblend",
+      "description": "Plugin for CodeBlend Support",
+      "version": "1.0.2",
       "author": {
         "name": "Kefei Qian"
       },
       "keywords": [
-        "git",
-        "commit",
-        "smart-commit"
+        "codeblend"
       ],
       "category": "developer-tools"
     }

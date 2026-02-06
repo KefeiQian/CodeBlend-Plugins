@@ -6,7 +6,7 @@ A [Claude Code plugin marketplace](https://code.claude.com/docs/en/plugin-market
 
 | Plugin | Description |
 |--------|-------------|
-| [codeblend-commit](./codeblend-commit) | Analyzes staged git changes and creates intelligent commits by categorizing them into logical groups |
+| [codeblend](./codeblend) | A collection of tools for CodeBlend |
 
 ## Installation
 
@@ -19,7 +19,7 @@ A [Claude Code plugin marketplace](https://code.claude.com/docs/en/plugin-market
 2. Install a plugin:
 
    ```
-   /plugin install codeblend-commit@codeblend-plugins --scope user
+   /plugin install codeblend@codeblend-plugins --scope user
    ```
 
 ## Usage
