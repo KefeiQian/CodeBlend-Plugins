@@ -1,0 +1,22 @@
+{
+  "name": "codeblend-plugins",
+  "owner": {
+    "name": "Kefei Qian"
+  },
+  "metadata": {
+    "description": "CodeBlend plugin marketplace for Claude Code"
+  },
+  "plugins": [
+    {
+      "name": "codeblend-commit",
+      "source": "./codeblend-commit",
+      "description": "Analyzes staged git changes and creates intelligent commits by categorizing them into logical groups",
+      "version": "1.0.0",
+      "author": {
+        "name": "Kefei Qian"
+      },
+      "keywords": ["git", "commit", "smart-commit"],
+      "category": "developer-tools"
+    }
+  ]
+}
