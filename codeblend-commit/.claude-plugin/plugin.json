@@ -1,7 +1,7 @@
 {
     "name": "codeblend-commit",
     "description": "Plugin for CodeBlend Commit Support",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": {
         "name": "Kefei Qian"
     }

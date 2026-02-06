@@ -16,29 +16,39 @@ Apply this skill when the user:
 - Asks to "split my changes into multiple commits"
 - Wants better commit messages with code details
 
-**Do NOT apply** when:
-
 - User explicitly wants a single commit with a specific message
-- There are no staged changes (prompt user to stage changes first)
+
 
 ## Workflow
 
-### Step 1: Analyze Staged Changes
+### Step 1: Analyze Git Status
 
-Run the following commands to understand staged changes:
+Run the following commands to understand the current git state:
 
 ```bash
-# Get list of staged files with status
+# Check for staged changes
 git diff --staged --name-status
 
-# Get detailed diff of staged changes
-git diff --staged
-
-# Get recent commit messages for style reference
-git log --oneline -10
+# Check for unstaged changes
+git status -s
 ```
 
-**Important:** If there are no staged changes, inform the user and suggest they stage files first with `git add`.
+**Logic for Staging:**
+
+1. **If staged changes exist**: Proceed to Step 2.
+2. **If NO staged changes but UNSTAGED changes exist**:
+   - prompt the user: "No staged changes found. Do you want to commit all changes, or select specific files?"
+   - **If "All"**: Run `git add .` and proceed.
+   - **If "Select"**: Ask the user to list files to stage, run `git add <files>`, and proceed.
+   - **If "Cancel"**: Stop execution.
+3. **If NO changes at all**: Inform the user and exit.
+
+Once changes are staged, run this to get the detailed diff:
+
+```bash
+git diff --staged
+git log --oneline -10
+```
 
 ### Step 2: Categorize Changes
 
@@ -199,7 +209,7 @@ Co-Authored-By: CodeBlend <aka.ms/codeblend> & Claude <noreply@anthropic.com>
 ## Edge Cases
 
 ### No Staged Changes
-Inform the user there are no staged changes and suggest using `git add <files>` to stage changes first.
+If no files are staged but unstaged changes exist, follow the "Logic for Staging" in Step 1 to help the user stage their work. Do not just exit; be helpful.
 
 ### Only One File Staged
 Create a single detailed commit without asking to split.

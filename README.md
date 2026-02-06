@@ -19,7 +19,7 @@ A [Claude Code plugin marketplace](https://code.claude.com/docs/en/plugin-market
 2. Install a plugin:
 
    ```
-   /plugin install codeblend-commit@codeblend-plugins
+   /plugin install codeblend-commit@codeblend-plugins --scope user
    ```
 
 ## Usage
